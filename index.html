@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Calculator</title>
+    <style>
+        body{
+            background-color: #d1d1e0;
+        }
+     .back{
+        background-color: #262626;
+
+;          border:solid rgb(66, 57, 23);
+        width: 360px;
+        padding-bottom: 30px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 60px;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        border-bottom-left-radius: 35px;
+        border-bottom-right-radius: 35px;
+        box-shadow: 3px 3px 0 0 rgb(109, 89, 89) ;
+     }
+     .display{
+        font-size: 45px;
+        width: 320px;
+        height:55px;
+        background-color: #133913;
+        margin-left: 15px;
+        margin-bottom: 10px;
+        margin-top: 0px;
+        padding: 5px;
+;
+     }
+     .buttun{
+        display: flex;
+        justify-content: space-evenly;
+        
+
+     }
+     .but{ border: solid 2px;
+        background-color:#ffffcc;
+        font-size: 20px;
+        height: 50px;
+        width: 65px;
+        margin-top: 10px;
+        border-radius: 7px;
+        box-shadow:1px 1px 0 0 rgb(208, 16, 16) ;
+     }
+     .but:hover
+     {
+      background-color: #ffbb99
+;
+;     cursor: pointer;
+      border-radius: 13px;
+     }
+
+     .t{
+        background-color: red;
+        box-shadow: none;
+        border: solid 2px;
+     }
+     .v{
+        background-color: blue;
+        box-shadow: none;
+        border-radius: none;
+        font-size: 40px;
+        border-radius: none;
+        border: solid black 2px;
+        margin-top: 10px;
+        height: 50px;
+        width: 65px;
+     }
+     .p{
+        color: rgb(245, 241, 239);
+        margin-left: 15px;
+        padding-top: 10px;
+        margin-bottom: 3px;
+        font-size: 20px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+     }
+     .pix{
+      display: flex;
+      justify-content: end;
+      margin-right: 10px;
+     }
+     .pic{
+        height: 25px;
+        width: 25px;
+        background-color: #133913;
+        border: 1px solid;
+     }
+     
+    </style>
+</head>
+<body>
+    <div class="back">
+        <p class="p">Casio</p>
+        <input type="text" id="input" class="display"/>
+        <div class="pix">
+         <div class="pic"></div>
+         <div class="pic"></div>
+         <div class="pic"></div>
+        </div>
+        <div class="buttun">
+             <button class="but t" onclick="clearScreen('ac')">AC</button>
+             <button class="but t" onclick="clearScreen('c')">C</button>
+             <button class="but" onclick="btnhandle('*')">X</button>
+             <button class="but" onclick="btnhandle('/')">/</button>
+        </div>
+        <div class="buttun">
+            <button class="but" onclick="btnhandle('7')">7</button>
+            <button class="but" onclick="btnhandle('8')">8</button>
+            <button class="but" onclick="btnhandle('9')">9</button>
+            <button class="but" onclick="btnhandle('+')">+</button>
+       </div>
+       <div class="buttun">
+        <button class="but" onclick="btnhandle('4')">4</button>
+        <button class="but" onclick="btnhandle('5')">5</button>
+        <button class="but" onclick="btnhandle('6')">6</button>
+        <button class="but" onclick="btnhandle('-')">-</button>
+        </div>
+        <div class="buttun">
+            <button class="but" onclick="btnhandle('1')">1</button>
+            <button class="but" onclick="btnhandle('2')">2</button>
+            <button class="but" onclick="btnhandle('3')">3</button>
+            <button class="but " onclick="btnhandle('00')">00</button>
+            </div>
+            <div class="buttun">
+                <button class="but" onclick="btnhandle('0')">0</button>
+                <button class="but" onclick="btnhandle('.')">.</button>
+                <button class="but" onclick="btnhandle('%')">%</button>
+                <button class=" v" onclick="btnhandle('=')">=</button>
+                </div>
+               
+
+    </div>
+
+    <script>
+      function btnhandle(key)
+      {
+         const inputScreen = document.getElementById('input');
+         if (key == '='){
+            inputScreen.value = eval(inputScreen.value);
+
+         }
+         else{
+            inputScreen.value += key ;
+         }
+
+      }
+      function clearScreen()
+      {
+         const inputScreen = document.getElementById('input');
+         inputScreen.value = '';
+
+      }
+    </script>
+</body>
+</html>
